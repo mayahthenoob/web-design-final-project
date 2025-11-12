@@ -1,0 +1,18 @@
+phonebook changes
+
+add the number with the names like 
+Mayah
+1 (473) 402-7888
+
+change how it looks make it look like contacts like the card
+change the hover color
+
+dont have to add
+if you want add a pic and description
+add description if sir says so
+
+use the method or text thats makes the word display just how you write it in html
+add a not found or no names begining with the letter when there is no name that begins with the letter 
+show all the available names that begins with the letter that was entered in the search bar
+
+

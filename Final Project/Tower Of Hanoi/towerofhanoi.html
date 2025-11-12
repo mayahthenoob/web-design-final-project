@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tower of Hanoi (Drag & Drop)</title>
+  <link rel="stylesheet" href="towerofhanoi.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="towerofhanoi.html">Tower Of Hanoi</a>
+</nav>
+
+  <h1>Tower of Hanoi (Drag & Drop)</h1>
+
+  <div id="controls">
+    <label for="numDisks">Number of Disks:</label>
+    <input type="number" id="numDisks" min="3" max="7" value="3" />
+    <button onclick="setupGame()">Start Game</button>
+  </div>
+
+  <div id="game">
+    <div class="peg" id="pegA" data-name="A">
+      <div class="rod"></div>
+    </div>
+    <div class="peg" id="pegB" data-name="B">
+      <div class="rod"></div>
+    </div>
+    <div class="peg" id="pegC" data-name="C">
+      <div class="rod"></div>
+    </div>
+  </div>
+
+  <script src="towerofhanoi.js"></script>
+
+</body>
+</html>
+  
