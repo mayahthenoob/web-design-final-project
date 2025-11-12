@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substitute for about page for final project</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #212b36; /* Dark text color */
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        /* Utility classes */
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #637381; /* Gray text for label */
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        /* Header Styling */
+        header {
+            background-color: #000a12; /* Dark blue/black */
+            color: #fff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        header .logo svg {
+            fill: #004c3f; /* Shopify Green for icon */
+            height: 20px; 
+            width: 20px;
+        }
+
+        header .logo span {
+            margin-left: 5px;
+            color: #004c3f; /* Shopify Green Text for logo name */
+            font-weight: 900;
+        }
+
+        header nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 40px;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-right: 5px;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        header nav a:hover {
+            color: #ccc;
+        }
+
+        .arrow {
+            font-size: 12px;
+            margin-left: 3px;
+            line-height: 1;
+        }
+
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .auth-buttons .login {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        .trial-button {
+            background-color: #5c6ac4; /* Dark Purple-Blue from screenshot */
+            color: #fff !important;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+            white-space: nowrap; /* Prevents button text from wrapping */
+        }
+
+        .trial-button:hover {
+            background-color: #46539a;
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 80px 50px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .mission .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mission h1 {
+            font-size: 44px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            color: #212b36;
+        }
+
+        .mission-text {
+            font-size: 18px;
+            color: #454f5b; /* Slightly lighter body text */
+        }
+
+        /* People Section */
+        .people {
+            padding: 50px 50px 100px;
+            background-color: #f4f6f8; /* Very light gray/off-white background */
+        }
+
+        .people .content-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            padding: 50px; 
+            background-color: #fff;
+            border-radius: 8px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Lift effect */
+        }
+
+        .people h2 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .people-text {
+            font-size: 16px;
+            color: #454f5b;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #a7b7c9 0%, #637381 100%); 
+            height: 100%;
+            min-height: 350px; 
+            width: 100%;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background-image: url('makima.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .image-placeholder svg {
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 50%;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            fill: white;
+            transition: transform 0.2s;
+        }
+
+        .image-placeholder:hover svg {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 900px) {
+            header {
+                padding: 15px 20px;
+            }
+            header nav {
+                display: none; /* Hide main navigation on smaller screens */
+            }
+            .mission {
+                padding: 50px 20px;
+            }
+            .mission h1 {
+                font-size: 32px;
+            }
+            .people {
+                padding: 20px;
+            }
+            .people .content-wrapper {
+                grid-template-columns: 1fr;
+                padding: 30px;
+                gap: 30px;
+            }
+            .people h2 {
+                font-size: 28px;
+            }
+            .people .text-content {
+                padding-right: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <svg fill="#004c3f" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 17.5c-4.14 0-7.5-3.36-7.5-7.5S5.86 2.5 10 2.5s7.5 3.36 7.5 7.5-3.36 7.5-7.5 7.5zm.7-10.7l-4.2-3.3c-.2-.1-.45-.05-.6.1-.15.15-.2.4-.1.6l1.3 2.7H5c-.28 0-.5.22-.5.5s.22.5.5.5h2.5l-1.3 2.7c-.1.2-.05.45.1.6.15.15.4.2.6.1l4.2-3.3c.2-.1.3-.3.3-.5s-.1-.4-.3-.5z"></path></svg>
+            <span>shopify</span>
+        </div>
+        
+        <nav>
+            <a href="#">Start <span class="arrow">▾</span></a>
+            <a href="#">Sell <span class="arrow">▾</span></a>
+            <a href="#">Market <span class="arrow">▾</span></a>
+            <a href="#">Manage <span class="arrow">▾</span></a>
+            <a href="#">Pricing</a>
+            <a href="#">Learn <span class="arrow">▾</span></a>
+        </nav>
+        
+        <div class="auth-buttons">
+            <a href="#" class="login">Log in</a>
+            <a href="#" class="trial-button">Start free trial</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="mission">
+            <div class="content-wrapper">
+                <p class="section-label">OUR MISSION</p>
+                <h1>Making commerce better for everyone</h1>
+                <p class="mission-text">
+                    We help people achieve independence by making it easier to start, run, and grow a business. We believe the future of commerce has more voices, not fewer, so we're reducing the barriers to business ownership to make commerce better for everyone.
+                </p>
+            </div>
+        </section>
+
+        <section class="people">
+            <div class="content-wrapper">
+                
+                <div class="text-content">
+                    <p class="section-label">OUR PEOPLE</p>
+                    <h2>Creating a community for impact</h2>
+                    <p class="people-text">
+                        Shopify has grown from 5 people in a coffee shop to over 5,000 across the globe. With over 1,000,000 businesses powered by Shopify, we care deeply about the work we do. We're constant learners who thrive on change and seek to have an impact in everything we do.
+                    </p>
+                </div>
+                
+                <div class="image-content">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

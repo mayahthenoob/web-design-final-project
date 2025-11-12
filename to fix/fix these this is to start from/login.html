@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flavorful Website - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #111;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: cyan;
+    }
+
+    nav a.signup, nav a.login {
+      color: #f59e0b;
+      font-weight: 700;
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .login-container {
+      align-items: center;
+      background-color: #fff;
+      border: 1px solid #dbdbdb;
+      padding: 40px 40px 20px;
+      text-align: center;
+      width: 100%;
+      max-width: 350px;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-container img {
+      width: 175px;
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 8px;
+      border: 1px solid #dbdbdb;
+      border-radius: 5px;
+      background: #fafafa;
+      font-family: 'Inter', sans-serif;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #3897f0;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #318ce7;
+    }
+
+    .or {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 15px 0;
+      color: #8e8e8e;
+      font-size: 14px;
+    }
+
+    .or::before,
+    .or::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #dbdbdb;
+    }
+
+    .or:not(:empty)::before {
+      margin-right: .75em;
+    }
+
+    .or:not(:empty)::after {
+      margin-left: .75em;
+    }
+
+    .fb-login {
+      color: #385185;
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
+      margin: 10px 0;
+    }
+
+    .fb-login:hover {
+      text-decoration: underline;
+    }
+
+    .forgot {
+      color: #00376b;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .forgot:hover {
+      text-decoration: underline;
+    }
+
+    .sign-up {
+      color: #0072ff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .sign-up:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-top: 1px solid #eee;
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+      }
+
+      nav a {
+        margin: 8px;
+        font-size: 14px;
+      }
+
+      .login-container {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Flavorful</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="workers.html">Workers</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="prices.html">Prices</a>
+      <a href="socials.html">Socials</a>
+      <a href="sign-up.html" class="signup">Sign Up</a>
+      <a href="login.html" class="login">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="login-container">
+      <img src="login.png" alt="Login Logo">
+
+      <form action="https://formspree.io/f/xanaypqz" method="POST">
+        <input type="text" name="fullname" placeholder="Name" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Log in</button>
+      </form>
+
+      <div class="or">OR</div>
+
+      <a href="#" class="fb-login">Log in with Facebook</a>
+      <a href="forgot.html" class="forgot">Forgot password?</a>
+      <p>Don't have an account? <a href="sign-up.html" class="sign-up">Sign up</a></p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Flavorful. | All rights reserved.
+  </footer>
+</body>
+</html>
