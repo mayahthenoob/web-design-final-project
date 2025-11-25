@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+$dsn = "mysql:host=sql300.infinityfree.com;dbname=flavorful" //might have to change due to error
+$username = "noels";
+$password = "noelbest2025"; //might have to change all this and put what the website gives in phpmyadmin
+
 $authUser = isset($_SESSION['authUser']) ? $_SESSION['authUser'] : null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {

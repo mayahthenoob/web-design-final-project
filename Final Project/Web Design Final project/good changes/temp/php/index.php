@@ -2,10 +2,9 @@
 session_start();
 
 // Initialize database connection
-$host = 'localhost';
-$db = 'flavorful';
-$user = 'root';
-$password = '';
+$dsn = "mysql:host=sql300.infinityfree.com;dbname=dbname"; //might have to change these to what th website gives
+$username = "noels";
+$password = "noelbest2025"
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $password);
