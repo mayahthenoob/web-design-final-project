@@ -1,0 +1,22 @@
+make all the provided webpages php files, let them keep their styling and add the crud connections that are in the files 
+Generate all PHP code and SQL needed.
+
+Database Connection File:
+
+Use MySQL
+
+Database Schema / Table Creation:
+
+Create the necessary MySQL table for all the data collecting in the webpages that needs to collect data
+
+Full CRUD Functionality:
+
+Create
+
+Read
+
+Update
+
+Delete
+
+make it so it can be run in xampp
