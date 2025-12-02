@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
     exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,68 +21,197 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flavorful - Workers</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
   <style id="FLAVORFUL_GLOBAL_STYLE">
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background-color: #fff; color: #111; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    /* Global Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; 
+      }
+   
+    body { 
+        font-family: 'Inter', sans-serif;
+        background-color: #fff; 
+        color: #111; 
+        line-height: 1.6; 
+        display: flex; 
+        flex-direction: column; 
+        min-height: 100vh; 
+      }
     
-    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; }
-    header h1 .logo { font-size: 24px; font-weight: 700; text-decoration: none; color: #111; }
-    .main-nav a { margin: 0 10px; text-decoration: none; color: #333; font-weight: 500; padding: 5px; transition: color 0.2s; }
-    .main-nav a:hover { color: #f59e0b; }
-    
-    .account-links { display: flex; align-items: center; }
-    .account-links a { text-decoration: none; padding: 8px 15px; border-radius: 4px; font-weight: 700; margin-left: 15px; transition: background-color 0.2s, color 0.2s; }
-    
-    .signup-link { color: #f59e0b; border: 1px solid #f59e0b; }
-    .signup-link:hover { background-color: #f59e0b; color: white; }
-    
-    .login-link { color: white; background-color: #111; }
-    .login-link:hover { background-color: #333; }
+    header { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 20px 60px; 
+        background: #fff; 
+        border-bottom: 1px solid #eee;
+        position: sticky; top: 0;
+        z-index: 1000; 
+        flex-wrap: wrap; 
+      }
 
-    .profile-icon { display: flex; align-items: center; margin-left: 15px; }
-    .profile-btn { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; border-radius: 50%; background-color: #f59e0b; color: white; font-weight: 700; text-decoration: none; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
-    .profile-btn span { font-size: 16px; }
-    
-    .hidden { display: none !important; }
-    footer { text-align: center; padding: 20px; background: #fff; border-top: 1px solid #eee; font-size: 14px; color: #777; margin-top: auto; }
+    header .logo { 
+        font-size: 24px; 
+        font-weight: 700;
+        text-decoration: none;
+        color: #111;
+        flex-shrink: 0; 
+      }
 
-    @media (max-width: 1024px) {
-      header { padding: 15px 30px; }
-      .main-nav a { margin: 0 5px; font-size: 14px; }
+    nav { 
+        display: flex; 
+        gap: 20px; 
+        align-items: center;
+      }
+
+    nav a { 
+        text-decoration: none;
+        color: #111;
+        font-weight: 600;   /*tomake changes to*/
+        padding: 5px 10px; 
+       border-radius: 4px;
+       transition: background-color 0.3s; 
+      }
+
+    nav a:hover { 
+      background-color: #f0f0f0; 
     }
 
+    .profile-icon {
+       display: flex;
+        align-items: center; 
+      }
+
+    .profile-btn {
+        background-color: #f59e0b;
+        color: white;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .profile-icon button {
+        margin-left: 10px; 
+        padding: 5px 10px; 
+        background-color: #e53e3e; 
+        color: white; 
+        border: none; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        font-size: 14px;
+        transition: background-color 0.3s;
+    }
+
+    .profile-icon button:hover { 
+      background-color: #c53030;
+     }
+
+    .workers-section {
+        padding: 60px;
+        text-align: center;
+        flex-grow: 1;
+    }
+    .workers-section h2 {
+        font-size: 2.5em;
+        color: #d97706;
+        margin-bottom: 50px;
+    }
+    
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .card {
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        padding: 20px;
+        transition: transform 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 4px solid #f59e0b;
+    }
+
+    .card h4 {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+
+    .card span {
+        display: block;
+        color: #d97706;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 0.9em;
+        color: #555;
+        margin-bottom: 15px;
+        min-height: 40px;
+    }
+
+    .socials a {
+        color: #111;
+        font-size: 1.5em;
+        margin: 0 5px;
+        transition: color 0.3s;
+    }
+
+    .socials a:hover {
+        color: #f59e0b;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #111;
+        color: #eee;
+        margin-top: auto;
+    }
+
+    /* RESPONSIVENESS */  /*fix responsiveness*/
     @media (max-width: 768px) {
-      header { flex-direction: column; align-items: flex-start; padding: 15px 20px; }
-      header h1 { margin-bottom: 10px; }
-      .main-nav { order: 2; display: flex; flex-wrap: wrap; margin-bottom: 10px; }
-      .account-links { order: 1; margin-bottom: 10px; align-self: flex-end; }
-    }
-
-    .workers-container { padding: 50px 20px; text-align: center; }
-    .workers-container h2 { font-size: 40px; font-weight: 800; margin-bottom: 50px; color: #000; }
-
-    .card-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-    .card { background-color: #f0f0f0; border-radius: 12px; padding: 20px; width: 300px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); }
-
-    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
-    .card h4 { font-size: 20px; font-weight: 700; margin-bottom: 5px; color: #111; }
-    .card span { display: block; color: #f59e0b; font-weight: 600; margin-bottom: 10px; }
-    .card p { font-size: 14px; color: #555; margin-bottom: 15px; }
-
-    .socials a { color: #333; font-size: 20px; margin: 0 8px; transition: color 0.3s; }
-    .socials a:hover { color: #f59e0b; }
-    
-    @media (max-width: 600px) {
-      .card-grid { flex-direction: column; align-items: center; }
-      .card { width: 90%; }
+        header {
+            padding: 15px 20px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        nav { width: 100%; justify-content: space-between; margin-top: 10px; }
+        .workers-section {
+            padding: 40px 20px;
+        }
+        .card-container {
+            grid-template-columns: 1fr;
+        }
     }
   </style>
 </head>
 <body>
-  <header>
+   <header>
     <h1><a href="index.php" class="logo">Flavorful</a></h1>
     <nav class="main-nav">
         <a href="index.php">Home</a>
@@ -96,84 +226,73 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
         <a href="register.php" class="signup-link" <?php echo $authUser ? 'style="display:none;"' : ''; ?>>Sign Up</a>
         <a href="login.php" class="login-link" <?php echo $authUser ? 'style="display:none;"' : ''; ?>>Login</a>
         
-        <div class="profile-icon" <?php echo !$authUser ? 'style="display:none;"' : ''; ?>>
-            <a href="balance.php" class="profile-btn" id="profile-btn">
-                <span id="profile-initials"><?php echo htmlspecialchars(substr($authUser['username'] ?? 'US', 0, 2)); ?></span>
-            </a>
-            <form method="POST" style="display:inline;">
-                <button type="submit" name="logout" style="margin-left: 10px; padding: 5px 10px; background-color: #f59e0b; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">Logout</button>
-            </form>
-        </div>
-    </div>
+      <div class="profile-icon" style="display:none;">
+        <a href="buy-now.php" class="profile-btn" title="View Order Options"> 
+            <span>US</span>
+        </a>
+        <form method="POST" style="display:inline;">
+            <button type="submit" name="logout">Logout</button>
+        </form>
+      </div>
+    </nav>
   </header>
 
-  <section class="workers-container">
-    <h2>Our Dedicated Team</h2>
-    <div class="card-grid">
+  <section class="workers-section">
+    <h2>Meet Our Dedicated Team</h2>
+    <div class="card-container">
+      
+      <!-- Manager -->
       <div class="card">
-        <img src="https://placehold.co/300x200/f59e0b/ffffff?text=Manager" alt="Manager">
-        <h4>Manager</h4>
-        <span>CEO & Founder</span>
-        <p>Founded the company in 2019 and oversees all operations, including product development and major deliveries.</p>
+        <img src="Manager" alt="Manager">
+        <h4>The Manager</h4>
+        <span>Founder & CEO</span>
+        <p>Oversees all operations, strategy, and business development for Flavorful.</p>
         <div class="socials">
-          <a href="#"><i class='bx bxl-whatsapp'></i></a>
-          <a href="#"><i class='bx bxl-facebook'></i></a>
-          <a href="#"><i class='bx bxl-instagram'></i></a>
-          <a href="#"><i class='bx bxl-twitter'></i></a>
+          <a href="#"><i class="bx bxl-whatsapp"></i></a>
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
         </div>
       </div>
 
+      <!-- Noel -->
       <div class="card">
-        <img src="https://placehold.co/300x200/f59e0b/ffffff?text=Akim" alt="Akim">
-        <h4>Akim</h4>
-        <span>Lead Packager</span>
-        <p>Packages the pennacools and organizes them into $5.00 and $10.00 packets.</p>
+        <img src="#" atl="Noel Pic">
+        <h4>Noel</h4>
+        <span>Lead Production</span>
+        <p>Manages the daily production line and ensures quality control of every batch.</p>
         <div class="socials">
-          <a href="#"><i class='bx bxl-whatsapp'></i></a>
-          <a href="#"><i class='bx bxl-facebook'></i></a>
-          <a href="#"><i class='bx bxl-instagram'></i></a>
-          <a href="#"><i class='bx bxl-twitter'></i></a>
+          <a href="#"><i class="bx bxl-whatsapp"></i></a>
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
         </div>
       </div>
 
+      <!-- Allana -->
       <div class="card">
-        <img src="https://placehold.co/300x200/f59e0b/ffffff?text=Gabriel" alt="Gabriel">
-        <h4>Gabriel</h4>
-        <span>Packager</span>
-        <p>Works alongside Akim in packaging pennacools and ensuring quality control.</p>
-        <div class="socials">
-          <a href="#"><i class='bx bxl-whatsapp'></i></a>
-          <a href="#"><i class='bx bxl-facebook'></i></a>
-          <a href="#"><i class='bx bxl-instagram'></i></a>
-          <a href="#"><i class='bx bxl-twitter'></i></a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://placehold.co/300x200/f59e0b/ffffff?text=Allana" alt="Allana"> 
+        <img src="Allana" alt="Allana"> <!--put in the extension for the images for the cards-->
         <h4>Allana</h4>
         <span>Mixer</span>
-        <p>Responsible for mixing flavors and ensuring product consistency.</p>
+        <p>Responsible for mixing flavors and ensuring product consistency, making sure every pennacool tastes perfect.</p>
         <div class="socials">
-          <a href="#"><i class='bx bxl-whatsapp'></i></a>
-          <a href="#"><i class='bx bxl-facebook'></i></a>
-          <a href="#"><i class='bx bxl-instagram'></i></a>
-          <a href="#"><i class='bx bxl-twitter'></i></a>
+          <a href="#"><i class="bx bxl-whatsapp"></i></a>
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
         </div>
       </div>
 
+      <!-- Ezekiel -->
       <div class="card">
-        <img src="https://placehold.co/300x200/f59e0b/ffffff?text=Ezekiel" alt="Ezekiel">
+        <img src="Ezekiel" alt="Ezekiel">
         <h4>Ezekiel</h4>
         <span>Sales & Delivery</span>
-        <p>Handles the bulk of sales and deliveries to supermarkets and local shops.</p>
+        <p>Handles the bulk of sales and deliveries to supermarkets and local shops efficiently.</p>
         <div class="socials">
-          <a href="#"><i class='bx bxl-whatsapp'></i></a>
-          <a href="#"><i class='bx bxl-facebook'></i></a>
-          <a href="#"><i class='bx bxl-instagram'></i></a>
-          <a href="#"><i class='bx bxl-twitter'></i></a>
+          <a href="#"><i class="bx bxl-whatsapp"></i></a>
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
         </div>
       </div>
+      
     </div>
   </section>
 

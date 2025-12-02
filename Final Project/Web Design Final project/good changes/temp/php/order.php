@@ -149,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_order'])) {
 </head>
 <body>
 
-<header>
+ <header>
     <h1><a href="index.php" class="logo">Flavorful</a></h1>
     <nav class="main-nav">
         <a href="index.php">Home</a>
@@ -160,7 +160,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_order'])) {
         <a href="socials.php">Socials</a>
         <a href="buy-now.php">Buy Now</a>
     </nav>
-
     <div class="account-links">
         <a href="register.php" class="signup-link" <?php echo $authUser ? 'style="display:none;"' : ''; ?>>Sign Up</a>
         <a href="login.php" class="login-link" <?php echo $authUser ? 'style="display:none;"' : ''; ?>>Login</a>

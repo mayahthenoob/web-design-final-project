@@ -1,9 +1,4 @@
 <?php
-// ============================================
-// about.php
-// ============================================
-?>
-<?php
 session_start();
 $authUser = isset($_SESSION['authUser']) ? $_SESSION['authUser'] : null;
 
