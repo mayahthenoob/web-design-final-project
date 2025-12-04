@@ -1,4 +1,0 @@
-change the database setup on all web pages
-check to see if there is a table for balance
-connect the database and run it
-fix the calculator and double check if all pages are there
