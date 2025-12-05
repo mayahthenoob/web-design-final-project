@@ -43,9 +43,9 @@ renderHeader('workers.php', $authUser);
                 </div>
             </div>
             
-            <!-- (Add more team members here if needed) -->
+            <!-- Tom -->
             <div class="card" style="border: 1px solid #eee; padding: 25px; border-radius: 10px; box-shadow: var(--shadow-md); text-align: center; background: white;">
-                <img src="https://placehold.co/150x150/60a5fa/ffffff?text=Local" alt="Local Team Member" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 0 auto 15px auto; border: 3px solid var(--primary-color);">
+                <img src="https://placehold.co/150x150/60a5fa/ffffff?text=Tom" alt="Tom" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 0 auto 15px auto; border: 3px solid var(--primary-color);">
                 <h4 style="font-size: 1.5em; color: var(--secondary-color); margin-bottom: 5px;">Tom</h4>
                 <span style="display: block; font-size: 1em; color: #666; font-weight: 500; margin-bottom: 15px;">Production & Customer Service</span>
                 <p style="font-size: 0.9em; color: #444;">Our dedicated employee works daily to maintain the quality and freshness you expect.</p>
