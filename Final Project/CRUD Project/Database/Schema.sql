@@ -58,12 +58,3 @@ CREATE TABLE `users` (
   `role` enum('user','admin') DEFAULT 'user',
   `created_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
-
-INSERT INTO `users` (`user_id`, `username`, `email`, `password_hash`, `country`, `address`, `phone`, `balance`, `role`, `created_at`) VALUES
-(1, 'testuser', 'test@example.com', '$2y$10$92h62x.t8u4MhVwA5Gg3i.1L8Qn2Kj1h6lDqW9z7G5T9Jg6F7c8A', 'Grenada', 'St. George\'s', '473-555-1234', '50.00', 'user', '2025-12-02 23:35:38'),
-(2, 'admin', 'admin@flavorful.com', '$2y$10$92h62x.t8u4MhVwA5Gg3i.1L8Qn2Kj1h6lDqW9z7G5T9Jg6F7c8A', 'Grenada', 'St. Patrick\'s', '473-555-0000', '999.00', 'user', '2025-12-02 23:35:38'),
-
-
-
-
